@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.database.GsonParser;
+import org.example.gameapp.ShowInitialWindow;
+
 import javax.swing.*;
 
 public class Main {
@@ -9,7 +11,8 @@ public class Main {
 
         GsonParser gsonParser = new GsonParser();
         System.out.println(gsonParser.getCityNames());
-        GameApp.start();
+        //GameApp.start();
+        SwingUtilities.invokeLater(ShowInitialWindow::show);
 
     }
 }

@@ -35,10 +35,19 @@ public class Move {
         }
     }
 
-    private boolean check(String input) {
-        return !usedCities.contains(input) &&
-                input.startsWith(lastCity.substring(lastCity.length() - 1).toUpperCase());
+//    private boolean check(String input) {
+//        return !usedCities.contains(input) &&
+//                input.startsWith(lastCity.substring(lastCity.length() - 1).toUpperCase());
+//    }
+private boolean check(String input) {
+    if (lastCity == null) {
+        return true;
     }
+    return !usedCities.contains(input) &&
+            input.toUpperCase().startsWith(lastCity.substring(lastCity.length() - 1).toUpperCase());
+} // редагував код Віталія, тому що була помилка після нажаття кнопки Skip
+    // Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException: Cannot invoke "String.length()" because "this.lastCity" is null
+
 
     public String getComputerMove() {
 
